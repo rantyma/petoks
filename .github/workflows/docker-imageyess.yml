@@ -1,0 +1,16 @@
+on: 
+  workflow_dispatch:
+defaults:
+  run:
+    shell: bash
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 999999
+
+    steps:
+    - name: Session Setup
+      uses: mxschmitt/action-tmate@master
